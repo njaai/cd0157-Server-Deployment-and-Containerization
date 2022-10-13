@@ -7,13 +7,20 @@ import logging
 import datetime
 import functools
 import jwt
+from dotenv import load_dotenv
+load_dotenv()
 
 # pylint: disable=import-error
 from flask import Flask, jsonify, request, abort
 
 
-JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
-LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+JWT_SECRET = os.environ.get('JWT_SECRET')
+LOG_LEVEL = os.environ.get('LOG_LEVEL')
+
+print(JWT_SECRET)
+# JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
+# LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+
 
 
 def _logger():
