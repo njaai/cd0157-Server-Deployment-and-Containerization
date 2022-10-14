@@ -4,7 +4,8 @@ Tests for jwt flask app.
 import os
 import json
 import pytest
-
+from dotenv import load_dotenv
+load_dotenv()
 import main
 
 SECRET = 'TestSecret'
