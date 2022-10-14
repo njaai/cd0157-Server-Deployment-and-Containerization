@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 RUN pip install python-dotenv
 
 # Define an entrypoint which will run the main app using the Gunicorn WSGI server.
-ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
+ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:8080", "main:APP"]
